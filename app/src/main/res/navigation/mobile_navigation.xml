@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/introFragment">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.pawanyadav497.kbcwithpawan.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.pawanyadav497.kbcwithpawan.ui.gallery.GalleryFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.pawanyadav497.kbcwithpawan.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/introFragment"
+        android:name="com.pawanyadav497.kbcwithpawan.ui.intro.IntroFragment"
+        android:label="fragment_intro"
+        tools:layout="@layout/fragment_intro" >
+        <action
+            android:id="@+id/navigate_to_home"
+            app:destination="@+id/nav_home"/>
+        <action
+            android:id="@+id/navigate_to_loginFragment"
+            app:destination="@+id/loginFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.pawanyadav497.kbcwithpawan.ui.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/navigate_to_home"
+            app:destination="@+id/nav_home"/>
+        <action
+            android:id="@+id/navigate_to_signupFragment"
+            app:destination="@+id/signupFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/signupFragment"
+        android:name="com.pawanyadav497.kbcwithpawan.ui.signup.SignupFragment"
+        android:label="fragment_signup"
+        tools:layout="@layout/fragment_signup" >
+        <action
+            android:id="@+id/navigate_to_loginFragment"
+            app:destination="@+id/loginFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/scoreboardFragment"
+        android:name="com.pawanyadav497.kbcwithpawan.ui.scoreboard.ScoreboardFragment"
+        android:label="fragment_scoreboard"
+        tools:layout="@layout/fragment_scoreboard" >
+        <action
+        android:id="@+id/navigate_to_home"
+        app:destination="@+id/nav_home"/>
+    </fragment>
+</navigation>
