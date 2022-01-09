@@ -2,6 +2,7 @@ package com.pawanyadav497.kbcwithpawan.ui.home;
 
 //import android.app.Dialog;
 import android.graphics.Color;
+import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.GradientDrawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -110,10 +112,15 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+        ConstraintLayout constraintLayout=binding.homeLayout;
+        AnimationDrawable earth=(AnimationDrawable)constraintLayout.getBackground();
+        earth.start();
+
 
         progressBar= binding.pbquizTimer;//Extra 5
 
         mediaPlayerTimer.start();
+        mediaPlayerTimer.setLooping(true);
         countDownTimer = new CountDownTimer(45000,1000) {
             @Override
             public void onTick(long l) {
@@ -248,6 +255,7 @@ public class HomeFragment extends Fragment {
                     backgroundshape1.setColor(Color.rgb(255,128,128));
                     mediaPlayerWrong.start();
                     wrong();
+                    mediaPlayerTimer.stop();
                     navController.navigate(R.id.scoreboardFragment);
                 }
             }
@@ -260,12 +268,12 @@ public class HomeFragment extends Fragment {
                     backgroundshape2.setColor(Color.rgb(128,255,128));
                     mediaPlayerCorrect.start();
                     correct();
-                    mediaPlayerTimer.start();//added last
-                }
+                     }
                 else{
                     backgroundshape2.setColor(Color.rgb(255,128,128));
                     mediaPlayerWrong.start();
                     wrong();
+                    mediaPlayerTimer.stop();
                     navController.navigate(R.id.scoreboardFragment);
                 }
             }
@@ -283,6 +291,7 @@ public class HomeFragment extends Fragment {
                     backgroundshape3.setColor(Color.rgb(255,128,128));
                     mediaPlayerWrong.start();
                     wrong();
+                    mediaPlayerTimer.stop();
                     navController.navigate(R.id.scoreboardFragment);
                 }
             }
@@ -300,6 +309,7 @@ public class HomeFragment extends Fragment {
                     backgroundshape4.setColor(Color.rgb(255,128,128));
                     mediaPlayerWrong.start();
                     wrong();
+                    mediaPlayerTimer.stop();
                     navController.navigate(R.id.scoreboardFragment);
                 }
             }

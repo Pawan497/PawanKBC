@@ -24,8 +24,8 @@
 
     <TextView
         android:id="@+id/player_name"
-        android:layout_width="98dp"
-        android:layout_height="16dp"
+        android:layout_width="123dp"
+        android:layout_height="34dp"
         android:autoSizeTextType="uniform"
         android:text="Player Name"
         android:textStyle="bold"
@@ -34,7 +34,7 @@
         app:layout_constraintHorizontal_bias="0.33"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.41000003" />
+        app:layout_constraintVertical_bias="0.39" />
 
     <TextView
         android:id="@+id/amount_in_numbers"

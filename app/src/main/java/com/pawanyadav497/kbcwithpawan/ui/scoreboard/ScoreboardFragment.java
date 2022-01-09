@@ -40,7 +40,7 @@ public class ScoreboardFragment extends Fragment {
     TextView tvdate,tvAmountInWords,tvAmountInNumbers,tvPlayerName,tvCongrats;
     Calendar calendar;
     Button btnPlayAgain;
-    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/mm/yyyy");
+    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
     private Integer score1;
 
     DatabaseReference databaseReference;
